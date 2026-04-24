@@ -1,0 +1,6 @@
+RewriteEngine On
+# Allow static design folder
+RewriteRule ^educircle_design(/.*)?$ - [L]
+
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L,QSA]
