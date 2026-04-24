@@ -1,0 +1,1 @@
+id,country_id,state_id,university_name,slug,estd,rank,description,region_type,university_link,is_popular,banner_img,logo_img,created_at,updated_at

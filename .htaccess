@@ -1,0 +1,8 @@
+RewriteEngine On
+# Allow static design folder
+RewriteRule ^educircle_design(/.*)?$ - [L]
+
+# Redirect Everything to Public Folder
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L]
+

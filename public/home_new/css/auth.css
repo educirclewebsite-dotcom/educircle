@@ -1,0 +1,396 @@
+/* ==========================================================================
+   --- AUTHENTICATION PAGES (LOGIN & REGISTER) ---
+   ========================================================================== */
+
+/* Shared Base Styles - Scoped to content wrapper or body */
+.auth-page {
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: #f8fbff; Removed to show body_bg.png */
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* For pages integrated into layout */
+.auth-page-content {
+    /* background-color: #f8fbff !important; Removed to show body_bg.png */
+    min-height: calc(100vh - 100px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Background Effects */
+
+/* Login Watermark (Educircle Infinity Logo) */
+.login-watermark {
+    position: fixed;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    max-width: 1200px;
+    opacity: 0.06;
+    /* 5-8% opacity per design request */
+    filter: blur(40px);
+    /* Soft blur effect */
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Ambient Background Blobs (for Registration Page) */
+.blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 129, 250, 0.08) 0%, rgba(0, 129, 250, 0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(80px);
+    animation: auth-float 20s infinite alternate;
+}
+
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    background: radial-gradient(circle, rgba(112, 163, 68, 0.08) 0%, rgba(112, 163, 68, 0) 70%);
+}
+
+.blob-2 {
+    bottom: -10%;
+    right: -10%;
+}
+
+.blob-3 {
+    top: 40%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(2, 44, 84, 0.05) 0%, rgba(2, 44, 84, 0) 70%);
+}
+
+@keyframes auth-float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        transform: translateY(-50px) scale(1.1);
+    }
+}
+
+/* Page Wrappers */
+.registar-page-wrapper,
+.login-page-wrapper {
+    flex: 1;
+    padding-top: 50px; /* Reduced for standalone, layout uses section-padding */
+    padding-bottom: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Form Containers */
+.register-container {
+    width: 100%;
+    max-width: 600px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 74, 173, 0.05);
+    padding: 40px;
+    text-align: center;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 450px;
+    background: #ffffff !important;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 74, 173, 0.1);
+    padding: 45px 40px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Typography & Headers */
+.register-welcome-title,
+.login-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -0.02em;
+}
+
+.login-title {
+    font-size: 1.8rem;
+    color: #102C57;
+}
+
+.register-hero-desc,
+.login-subtitle {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.login-subtitle {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 35px;
+}
+
+.register-subtitle {
+    font-size: 0.95rem;
+    color: #102C57;
+    margin-bottom: 35px;
+    font-weight: 700;
+}
+
+/* Inner Cards (Specific to Register) */
+.register-inner-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 74, 173, 0.08);
+    padding: 40px 30px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-inner-card:hover {
+    box-shadow: 0 20px 50px rgba(0, 74, 173, 0.12);
+}
+
+.register-inner-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #102C57;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Features List & Why Section (Register) */
+.why-account-section {
+    margin-bottom: 30px;
+    background: #f8fbff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px dashed #d0d8e0;
+}
+
+.why-account-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features-list li {
+    font-size: 0.85rem;
+    color: #4b5563;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.features-list i {
+    color: #28a745;
+    margin-top: 3px;
+}
+
+/* Form Elements (Shared) */
+.form-group {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.login-card .form-group label {
+    font-size: 0.9rem;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.form-control-pill {
+    height: 55px;
+    border-radius: 50px;
+    border: 1.5px solid #d0d8e0;
+    padding: 10px 25px;
+    font-size: 1rem;
+    color: #555;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    background-color: #f9fafb;
+}
+
+.form-control-pill:focus {
+    border-color: #0081FA;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 129, 250, 0.15);
+    outline: none;
+    transform: scale(1.01);
+}
+
+/* Buttons */
+.btn-register-send,
+.btn-login {
+    width: 100%;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-register-send {
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    margin-top: 25px;
+}
+
+.btn-login {
+    background: linear-gradient(135deg, #0081FA 0%, #004aad 100%);
+    box-shadow: 0 4px 15px rgba(0, 129, 250, 0.3);
+    font-size: 1rem;
+}
+
+.btn-register-send:hover,
+.btn-login:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.btn-register-send:hover {
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
+    color: #fff;
+}
+
+.btn-login:hover {
+    box-shadow: 0 8px 25px rgba(0, 129, 250, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Meta Links & Trust Lines */
+.login-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 30px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4b5563;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.remember-me input {
+    width: 16px;
+    height: 16px;
+    accent-color: #0081FA;
+}
+
+.forgot-password,
+.register-link a {
+    color: #0081FA;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.forgot-password:hover,
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.trust-line {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.trust-line i {
+    margin-right: 5px;
+}
+
+.register-link {
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
+/* Logic Mini Logo */
+.login-logo-mini {
+    max-height: 45px;
+    margin-bottom: 25px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .registar-page-wrapper,
+    .login-page-wrapper {
+        padding-top: 50px;
+    }
+
+    .register-container,
+    .login-card {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+
+    .register-welcome-title {
+        font-size: 1.6rem;
+    }
+
+    .register-inner-card {
+        padding: 30px 20px;
+    }
+
+    .login-watermark {
+        width: 150vw;
+        left: 60%;
+    }
+}
+
+/* Layout Fixes for Integrated Pages */
+.footer-no-contact {
+    padding-top: 100px !important;
+}
+

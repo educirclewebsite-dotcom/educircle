@@ -1,0 +1,214 @@
+
+ .card-header {
+            background-color: #83bb40 !important;
+            font-weight: 500;
+            font-size: 16px;
+            color: #fff
+        }
+
+        .badge.bg-warning {
+            background-color: #ffc107 !important;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .scroll-card {
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 15px;
+        }
+
+        .app-status-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border: 1px solid #eee;
+        }
+
+        .app-status-card .status-label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .app-status-card .university-name {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .scroll-card::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .scroll-card::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+
+        .fs-5 {
+            font-size: 1.1rem !important;
+        }
+
+        @media (max-width: 768px) {
+            .scroll-card {
+                max-height: 250px;
+            }
+        }
+
+
+
+    .vertical-menu {
+        background-color: #ffffff !important;
+    }
+
+  
+
+
+
+    /*
+.vertical-menu {
+    width: 276px!important;
+} */
+
+.menu-title {
+    padding: 8px 20px !important;
+    letter-spacing: .05em;
+    pointer-events: none;
+    cursor: default;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #505d69;
+    font-weight: 600;
+    font-family: Inter, sans-serif;
+    opacity: .5;
+}
+
+/* .navbar-brand-box {
+    padding: 0 1.5rem;
+    width: 276px!important;
+} */
+/* .main-content {
+    margin-left: 268px!important;
+    overflow: hidden;
+} */
+body[data-sidebar=dark] #sidebar-menu ul li a {
+    color: #3e3f40;
+    padding-top: 2px!important;
+    padding-bottom: 2px!important;
+    font-weight: 400;
+}
+/* body[data-sidebar=dark] #sidebar-menu ul li a {
+    color: #3e3f40;
+    font-weight: 400;
+} */
+#sidebar-menu ul li a {
+    font-size: 14px;
+    line-height: 39px;
+    letter-spacing: 0.5px;
+
+}
+body[data-sidebar=dark] .navbar-brand-box {
+    background: #3e3f40;
+}
+
+body[data-sidebar=dark] #sidebar-menu ul li a:hover, .mm-active .active {
+    color: #fff !important;
+    text-decoration: none;
+    background-color: hsl(210deg 1.59% 24.71%);
+    border-radius: 0px 12px 12px 0px;
+}
+.icon-img-size{
+    height: 40px;
+}
+.mm-active .active i {
+    color: #ffff !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .container-fluid .hover-card {
+        height: 130px;
+    }
+}
+
+.metismenu .menu-title{
+        color: #000000 !important;
+}
+body[data-sidebar=dark] #sidebar-menu ul li a i {
+    color: #030f27;
+}
+.noti-icon i {
+    color: #ffdf57;
+}
+
+
+
+
+
+  /* General card style */
+.card {
+    border: 1px solid #e3e6f0;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Form label and input spacing */
+.form-group label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #2c3e50;
+    margin-bottom: 6px;
+}
+
+.form-control,
+.custom-select {
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 10px 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus,
+.custom-select:focus {
+    border-color: #4b9cff;
+    box-shadow: 0 0 0 0.15rem rgba(75, 156, 255, 0.25);
+}
+
+
+/* Submit button */
+.btn-success {
+    background: #28a745;
+    border-color: #28a745;
+    padding: 10px 24px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
